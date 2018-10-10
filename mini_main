@@ -1,0 +1,28 @@
+#include<stdio.h>
+struct ques
+{
+int qno;
+char[100] name;
+char[10] opt1;
+char[10] opt2;
+char[10] opt3;
+char[10] opt4;
+int flag;
+} arr[10];
+
+
+
+void create()
+{int i;
+for(i=0;i<10;i++)
+{
+arr[i].qno=(i+1);
+}
+arr[1].name="";
+arr[1].opt1="";
+arr[1].opt2="";
+arr[1].opt3="";
+arr[1].opt4="";
+
+}
+
