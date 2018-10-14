@@ -11,6 +11,7 @@ struct node
 
 char data[100];
 
+
 struct o *opt1,*opt2,*opt3,*opt4;
 
 
@@ -85,6 +86,18 @@ case 4:
 
 
 
+struct node *opt1,*opt2,*opt3,*opt4;
+
+};
+
+struct node *root;
+
+void create()
+
+{
+   struct node *p;
+
+   p=(struct node *)malloc(sizeof(struct node));
 }
 
 
@@ -100,7 +113,10 @@ void main()
 {
 
 int op,n;
+
 create("what is my name?","Tanvi","T","A","n",1);
+
+root=(struct node *)malloc(sizeof(struct node));
 
 
 
@@ -113,10 +129,15 @@ do
 
 {  printf("\n WELCOME TO THE QUIZ! \n ALL THE BEST!");
 
+
 printf("%s");
 
 
   /*  printf("\n Enter your choice\n");
+
+
+
+    printf("\n Enter your choice\n");
 
     scanf("%d",&op);
 
@@ -154,7 +175,9 @@ printf("%s");
    }
 
   }while(op<5);
+
   */
+
 
   getch();
 
