@@ -1,56 +1,50 @@
 #include<stdio.h>
-
 #include<conio.h>
-
 #include<malloc.h>
 #include<string.h>
 
 struct node
-
 {
-
-char data[100];
-
-
+char *data;
 struct o *opt1,*opt2,*opt3,*opt4;
-
-
-
+struct node *next;
 };
 struct o
 {
- char choice[100];
+ char *choice;
+ //struct o *next;
  struct node *next;
-
 };
-
+void disp(struct node *p);
 struct node *start=NULL;
 
 void create(char ques[],char op1[],char op2[],char op3[],char op4[], int crt)
-
 {
-   struct node *p;
    struct node *p1;
-
-   p=(struct node *)malloc(sizeof(struct node));
-
-   if(p==NULL)
-
+   struct node *p=(struct node *)malloc(sizeof(struct node));
+   if(p==NULL)//memo check
    {
-
      printf("\n Out of memory");
      exit(0);
-
    }
-   if (start==NULL)
+   if (start==NULL){
     start=p;
-    else p=p1;
+    printf("start = p created");}
+    else {p=p1;
+    printf("xD p1");}
 
    p->data=ques;
-   p->opt1->choice=op1;
-   p->opt2->choice=op2;
-   p->opt3->choice=op3;
-   p->opt4->choice=op4;
+   printf(p->data);
+   p->opt1->choice=(op1);
+   printf(p->opt1->choice);
+   p->opt2->choice=(op2);
+   printf(p->opt2->choice);
+   p->opt3->choice=(op3);
+   printf(p->opt3->choice);
+   p->opt4->choice=(op4);
+   printf(p->opt4->choice);
+   printf("data assigned");
+
 switch(crt)
 {
 case 1:
@@ -74,113 +68,39 @@ case 3:
 case 4:
       p->opt1->next=NULL;
       p->opt2->next=NULL;
-       p->opt3->next=NULL;
-        p->opt4->next=p1;
+      p->opt3->next=NULL;
+      p->opt4->next=p1;
      break;
-
 }
+printf("reached disp");
+disp(p);
 }
-
-
-
-
-
-
-struct node *opt1,*opt2,*opt3,*opt4;
-
-};
-
-struct node *root;
-
-void create()
-
-{
-   struct node *p;
-
-   p=(struct node *)malloc(sizeof(struct node));
+void disp(struct node *p){
+    printf("Q)%s\n",p->data);
+    printf("1)%s\n",p->opt1);printf("2)%s\n",p->opt2);printf("3)%s\n",p->opt3);printf("4)%s\n",p->opt4);
 }
-
-
-
-
-
-
-
-
-
 void main()
-
 {
-
 int op,n;
-
-create("what is my name?","Tanvi","T","A","n",1);
-
-root=(struct node *)malloc(sizeof(struct node));
-
-
-
-
-
-
-clrscr();
-
-do
-
-{  printf("\n WELCOME TO THE QUIZ! \n ALL THE BEST!");
-
-
-printf("%s");
-
-
-  /*  printf("\n Enter your choice\n");
-
-
-
-    printf("\n Enter your choice\n");
-
-    scanf("%d",&op);
-
-
-
+create("what is my name?","Tanvi","T","A","N",1);
+printf("\n Enter your choice\n");
+printf("\n WELCOME TO THE QUIZ! \n ALL THE BEST!");
+do{
+scanf("%d",&op);
   switch (op)
-
    {
-
     case 1: printf("\n ");
-
-
-
               break;
-
     case 2: printf("\n \n");
-
-
-
               break;
-
     case 3: printf("\n \n");
-
-
-
               break;
     case 4: printf("\n \n");
-
-
-
               break;
-
-    default: exit(0);
-
+    default: printf("Enter 5 to exit");
+    break;
    }
-
   }while(op<5);
+getch();
+}
 
-  */
-
-
-  getch();
-
-
-
-  }
