@@ -1,2 +1,5 @@
-# DSMP
-Data_Structures_Mini_Project
+# CQUIZ
+
+A Quiz game in C
+
+- Extensively used Linked Lists and pointers
